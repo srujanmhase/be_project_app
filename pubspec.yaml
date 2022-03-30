@@ -7,9 +7,9 @@ environment:
   sdk: ">=2.16.0 <3.0.0"
 
 dependencies:
+  bloc: ^8.0.3
   firebase_core: ^1.13.1
   firebase_database: ^9.0.8
-  bloc: ^8.0.3
   flutter:
     sdk: flutter
   flutter_bloc: ^8.0.1

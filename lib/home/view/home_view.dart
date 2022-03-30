@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_final_locals, lines_longer_than_80_chars, library_private_types_in_public_api
+
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
@@ -53,16 +55,16 @@ class _HomePageViewState extends State<HomePageView> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-          child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          SizedBox(
-            width: MediaQuery.of(context).size.width,
-          ),
-          Container(
-            height: 170,
-            width: 300,
-            decoration: BoxDecoration(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            SizedBox(
+              width: MediaQuery.of(context).size.width,
+            ),
+            Container(
+              height: 170,
+              width: 300,
+              decoration: BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.bottomLeft,
                   end: Alignment.topRight,
@@ -79,63 +81,74 @@ class _HomePageViewState extends State<HomePageView> {
                 borderRadius: BorderRadius.circular(15),
                 boxShadow: const [
                   BoxShadow(
-                      color: Colors.grey,
-                      blurRadius: 30,
-                      offset: Offset(4, 4),
-                      spreadRadius: 2)
-                ]),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Text(
-                          'x: $xData',
-                          style: const TextStyle(
-                              fontSize: 18, color: Colors.white),
-                        ),
-                        Text(
-                          'y: $yData',
-                          style: const TextStyle(
-                              fontSize: 18, color: Colors.white),
-                        ),
-                        Text(
-                          'z: $zData',
-                          style: const TextStyle(
-                              fontSize: 18, color: Colors.white),
-                        ),
-                      ],
-                    ),
-                    Icon(predictionData == '0' ? Icons.check_box : Icons.cancel)
-                  ],
+                    color: Colors.grey,
+                    blurRadius: 30,
+                    offset: Offset(4, 4),
+                    spreadRadius: 2,
+                  )
+                ],
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Text(
+                            'x: $xData',
+                            style: const TextStyle(
+                              fontSize: 18,
+                              color: Colors.white,
+                            ),
+                          ),
+                          Text(
+                            'y: $yData',
+                            style: const TextStyle(
+                              fontSize: 18,
+                              color: Colors.white,
+                            ),
+                          ),
+                          Text(
+                            'z: $zData',
+                            style: const TextStyle(
+                              fontSize: 18,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Icon(
+                        predictionData == '0' ? Icons.check_box : Icons.cancel,
+                      )
+                    ],
+                  ),
+                  Text(
+                    'Status: ${predictionData == '0' ? 'Normal Condition' : 'Anomaly'}',
+                    style: const TextStyle(fontSize: 14, color: Colors.white),
+                  ),
+                ],
+              ),
+            ),
+            Column(
+              children: const [
+                Text(
+                  'Made by EXTC Group 6 2021-22',
+                ),
+                SizedBox(
+                  height: 20,
                 ),
                 Text(
-                  'Status: ${predictionData == '0' ? 'Normal Condition' : 'Anomaly'}',
-                  style: const TextStyle(fontSize: 14, color: Colors.white),
+                  'Srujan Mhase  Pramod Mohanty  Shantanu Patil  Sahil Yelgonda',
+                  style: TextStyle(fontSize: 11),
                 ),
               ],
-            ),
-          ),
-          Column(
-            children: const [
-              Text(
-                'Made by EXTC Group 6 2021-22',
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Text(
-                'Srujan Mhase  Pramod Mohanty  Shantanu Patil  Sahil Yelgonda',
-                style: TextStyle(fontSize: 11),
-              ),
-            ],
-          )
-        ],
-      )),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
